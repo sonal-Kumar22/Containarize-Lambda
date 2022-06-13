@@ -1,8 +1,9 @@
 version: 0.2
 
 env:
-  DOCKERHUB_USERNAME: "sk22tp"
-  DOCKERHUB_PASS: "wingardian"
+  variables:
+    DOCKERHUB_USERNAME: "sk22tp"
+    DOCKERHUB_PASS: "wingardian"
 
 phases:
   pre_build:
