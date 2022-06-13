@@ -1,15 +1,6 @@
 version: 0.2
 
-env:
-  variables:
-    DOCKERHUB_USERNAME: "sk22tp"
-    DOCKERHUB_PASS: "wingardian"
-
 phases:
-  pre_build:
-    commands:
-      - echo pre_build step...
-      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
   build:
     commands:
       - echo Build started on `date`
@@ -18,8 +9,11 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker image...
+      - echo Creating an ECR Repository
       - aws ecr create-repository --repository-name python-image --image-scanning-configuration scanOnPush=true
+      - echo adding tag to docker image 
       - docker tag python-image:3.9 414399442808.dkr.ecr.eu-west-1.amazonaws.com/python-image:3.9
+      - echo authenticate with ecr using docker login 
       - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 414399442808.dkr.ecr.eu-west-1.amazonaws.com
+      - echo Pusing image to ECR Registry 
       - docker push 414399442808.dkr.ecr.eu-west-1.amazonaws.com/python-image:3.9 
