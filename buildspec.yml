@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t Python-Image:3.9 .    
+      - docker build -t python-image:3.9 .    
   post_build:
     commands:
       - echo Build completed on `date`
