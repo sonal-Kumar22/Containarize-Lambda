@@ -19,6 +19,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
+      - aws ecr create-repository --repository-name python-image --image-scanning-configuration scanOnPush=true
       - docker tag python-image:3.9 414399442808.dkr.ecr.eu-west-1.amazonaws.com/python-image:3.9
       - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 414399442808.dkr.ecr.eu-west-1.amazonaws.com
       - docker push 414399442808.dkr.ecr.eu-west-1.amazonaws.com/python-image:3.9 
