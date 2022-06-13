@@ -1,9 +1,14 @@
 version: 0.2
 
+env:
+  DOCKERHUB_USERNAME: "sk22tp"
+  DOCKERHUB_PASS: "wingardian"
+
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR..
+      - echo pre_build step...
+      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
   build:
     commands:
       - echo Build started on `date`
