@@ -1,6 +1,8 @@
 # Containarize-Lambda
 Create the lambda along with package in docker image  And deploy image in ECR.
 
+**Imp link referred**: https://acloudguru.com/blog/engineering/packaging-aws-lambda-functions-as-container-images
+
 Errors Encountered :
 1.An image does not exist locally with the tag: while pushing image to local registry  
 You need to tag and push the image. When tagging an image, you can use the image identifier (imageId). It is listed when showing the list of all images with docker images. Syntax and an example (using imageId) for creating a tag are:
