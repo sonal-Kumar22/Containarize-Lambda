@@ -36,4 +36,14 @@ Link: https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.ht
 - Dockerhub is a registry where images are stored. Similarly, ECR is a registry provided by Amazon to store image so use any one of them. In our case ECR   would make sense because dockerhub suffers from rate limiting issues.
 - docker login command authenticates against the ECR repository aws_account_id.dkr.ecr.region.amazonaws.com with the password/token provided by aws ecr     get-login-password --region region
   
+8.How to create named and latest tag in Docker?
+- https://stackoverflow.com/questions/22080706/how-to-create-named-and-latest-tag-in-docker
+  
+9.How to update AWS lambda docker container version?
+- https://stackoverflow.com/questions/65470256/how-to-update-aws-lambda-docker-container-version
+  
+Links:
+  - https://docs.aws.amazon.com/cli/latest/reference/imagebuilder/get-image.html
+  - https://docs.aws.amazon.com/cli/latest/reference/lambda/update-function-code.html
+  - https://docs.aws.amazon.com/cli/latest/reference/ecr/create-repository.html
 
